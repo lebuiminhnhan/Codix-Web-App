@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'codeX-Web-App'`, () => {
+  it(`should have as title 'Codix-Web-App'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('codeX-Web-App');
+    expect(app.title).toEqual('Codix-Web-App');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('codeX-Web-App app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('Codix-Web-App app is running!');
   });
 });

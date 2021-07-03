@@ -1,0 +1,17 @@
+.login-text {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    color: wheat;
+  }
+}
+.dropdown-menu {
+  .dropdown-item {
+    cursor: pointer;
+  }
+  left: -105px;
+  @media screen and (max-width: 768px) {
+    left: 0 !important;
+  }
+}

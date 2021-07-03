@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from './class/user.model';
+import { AuthenService } from './services/authen.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'codeX-Web-App';
+  user: User | undefined;
+
+    constructor(private authenService: AuthenService) {
+        this.authenService.user.subscribe(x => this.user = x);
+    }
+
+    get isLogin () {
+      return !this.authenService.userValue;
+    }
+
+    logout() {
+        this.authenService.logout();
+    }
 }

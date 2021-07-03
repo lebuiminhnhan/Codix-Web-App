@@ -1,0 +1,44 @@
+<div class="mt-5">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <img src="../../../assets/logo.png" class="w-100" alt="">
+    </div>
+    <div class="col-12 col-lg-6 mt-3 mt-lg-0">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Username is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" id="rememberMe" name="rememberMe" [checked]="rememberMe"
+              (change)="rememberMe = !rememberMe" type="checkbox">
+              <label class="custom-control-label" for="rememberMe">Remember me</label>
+            </div>
+            <div>
+              <a routerLink="/register" class="link">Register</a>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" type="submit" class="btn btn-primary w-100">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Login
+            </button>
+        </div>
+    </form>
+    </div>
+  </div>
+
+</div>
